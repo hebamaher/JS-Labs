@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q2</title>
+</head>
+<body>
+
+<script>
+var count;
+do {
+    count = prompt("Enter number of persons:");
+} while (isNaN(count) || count === "" || count <= 0);
+
+count = Number(count);
+
+var users = [];
+
+for (var i = 0; i < count; i++) {
+    var name, age;
+
+    // Validate name
+    do {
+        name = prompt(`Enter name for person ${i + 1} (4–9 characters):`);
+    } while (name.length <= 3 || name.length >= 10 || !isNaN(name));
+
+    // Validate age
+    do {
+        age = prompt(`Enter age for person ${i + 1} (between 10 and 60):`);
+    } while (isNaN(age) || age <= 10 || age >= 60);
+
+    users.push({ name: name, age: age });
+}
+
+document.write("<table border='1' cellpadding='10'>");
+document.write("<tr><th>Name</th><th>Age</th></tr>");
+
+for (var i = 0; i < users.length; i++) {
+    document.write("<tr>");
+    document.write("<td>" + users[i].name + "</td>");
+    document.write("<td>" + users[i].age + "</td>");
+    document.write("</tr>");
+}
+
+document.write("</table>");
+</script>
+
+</body>
+</html>

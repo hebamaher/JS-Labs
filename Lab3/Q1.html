@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q1</title>
+</head>
+<body>
+
+<script>
+var arr = [];
+
+for (var i = 0; i < 5; i++) {
+    var num;
+    do {
+        num = prompt("Enter number " + (i + 1) + ":");
+    } while (isNaN(num) || num === "");
+    arr.push(Number(num));
+}
+
+function desc(a, b) {
+    return b - a; // if b > a , return positive value to swap
+};
+var descArr = arr.slice().sort(desc);
+
+function asc(a, b) {
+    return a - b; // if a > b, return positive value to swap
+};
+var ascArr = arr.slice().sort(asc);
+
+document.write("<h3>Original Array: " + arr.join(", ") + "</h3>");
+document.write("<h3>Descending Order: " + descArr.join(", ") + "</h3>");
+document.write("<h3>Ascending Order: " + ascArr.join(", ") + "</h3>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q3</title>
+</head>
+<body>
+<div id="header">
+    <img src="dom.jpg" alt="hello" /> 
+</div> 
+<div id="navigation"> 
+    <ul id="nav" > 
+        <li><strong>Memo</strong></li> 
+        <li><a href="Articles.html">Articles</a></li> 
+        <li><a href="Photos.html">Photos</a></li> 
+        <li><a href="About.html">About</a></li> 
+        <li><a href="Clients.html">Clients</a></li> 
+        <li><a href="Contact.html">Contact</a></li> 
+    </ul> 
+</div>
+<script>
+var header = document.getElementById("header");
+var img = header.getElementsByTagName("img")[0];
+
+var navDiv = document.getElementById("navigation");
+var ul = document.getElementById("nav");
+
+document.body.style.margin = "0";
+document.body.style.height = "100vh"; // Full viewport height
+document.body.style.position = "relative"; // For absolute positioning of children relative to body
+
+img.style.position = "absolute"; // Position relative to body
+img.style.top = "10px";
+img.style.right = "10px";
+
+var imgClone = img.cloneNode(true);
+imgClone.style.top = "auto"; // Reset top property for bottom positioning 
+imgClone.style.right = "auto"; // Reset right property for left positioning
+imgClone.style.bottom = "10px";
+imgClone.style.left = "10px";
+
+document.body.appendChild(imgClone);
+
+navDiv.style.position = "absolute"; // Removes navDiv from normal layout
+navDiv.style.top = "50%";
+navDiv.style.left = "50%";
+navDiv.style.transform = "translate(-50%, -50%)"; // Centering by its own dimensions
+
+ul.style.listStyleType = "circle";
+ul.style.textAlign = "center";
+</script>
+
+</body>
+</html>
