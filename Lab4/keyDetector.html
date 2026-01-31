@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q6</title>
+</head>
+<body>
+
+<h4>Press any key on the keyboard</h4>
+
+<script>
+    document.addEventListener("keydown", function (event) {
+
+    var asciiCode = event.keyCode;
+    var message = "ASCII Code: " + asciiCode;
+
+    if (event.altKey) {
+        message += "\nAlt key is pressed";
+    }
+    if (event.ctrlKey) {
+        message += "\nCtrl key is pressed";
+    }
+    if (event.shiftKey) {
+        message += "\nShift key is pressed";
+    }
+
+    alert(message);
+});
+
+</script>
+</body>
+</html>

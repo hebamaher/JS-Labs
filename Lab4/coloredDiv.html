@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q1</title>
+    <style>
+        body {
+            display: flex;   /* makes boxes appear horizontally */
+            flex-wrap: wrap; /* move to next line if screen is full */
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+            margin: 10px;
+            display: flex; /* use flexbox to center text */
+            align-items: center; /* vertically center */
+            justify-content: center; /* horizontally center */
+            font-weight: bold;
+            color: white;
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">Click</div>
+
+<script>
+    var div = document.getElementsByClassName("box")[0];
+
+    div.onclick = function () {
+    var clone = div.cloneNode(true);
+
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+
+    var rgbColor = "rgb(" + r + "," + g + "," + b + ")";
+
+    clone.style.backgroundColor = rgbColor;
+
+    clone.textContent = rgbColor; // Update text to show RGB value
+
+    document.body.appendChild(clone);
+};
+
+</script>
+</body>
+</html>

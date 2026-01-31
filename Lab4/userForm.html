@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q8</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+            width: 60%;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        span {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>User Information</h3>
+
+<form onsubmit="return false;">
+    Name:
+    <input type="text" id="name" oninput="validateName()">
+    <span id="nameErr"></span><br><br>
+
+    Age:
+    <input type="text" id="age" oninput="validateAge()">
+    <span id="ageErr"></span><br><br>
+
+    Email:
+    <input type="text" id="email" oninput="validateEmail()">
+    <span id="emailErr"></span><br><br>
+
+    <button onclick="addUser()">Add</button>
+    <button onclick="resetForm()">Reset</button>
+</form>
+
+
+<table id="table">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+</table>
+
+<script src="userForm.js"></script>
+</body>
+</html>

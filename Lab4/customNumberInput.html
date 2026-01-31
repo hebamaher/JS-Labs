@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q7</title>
+</head>
+<body>
+
+<input type="text" id="numInput" placeholder="Enter numbers only">
+
+<script>
+    var input = document.getElementById("numInput");
+
+    input.addEventListener("keypress", function (event) {
+
+    var charCode = event.keyCode;
+
+    // Allow only digits (0–9)
+    if (charCode < 48 || charCode > 57) {
+        event.preventDefault();
+    }
+});
+
+</script>
+</body>
+</html>
